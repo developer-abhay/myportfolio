@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import Home from "./components/Home/Home";
 import Navbar from "./components/Navbar/Navbar";
 import Projects from "./components/Projects/Projects";
+import About from "./components/About/About";
+// import Skills from "./components/Skills/Skills";
 
 function App() {
   useEffect(() => {
@@ -49,13 +51,13 @@ function App() {
   return (
     <main>
       <div id="trailer"></div>
+      <Navbar />
       <div id="sticky">
         <div id="scroll-body">
-          <Navbar />
           <Home />
           <Projects />
-          {/* <About /> */}
-          {/* <Skill /> */}
+          <About />
+          {/* <Skills /> */}
           {/* <Footer /> */}
         </div>
       </div>

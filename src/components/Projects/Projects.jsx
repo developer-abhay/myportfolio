@@ -3,6 +3,7 @@ import IMG1 from "../../assets/project1.png";
 import IMG2 from "../../assets/project2.png";
 import IMG3 from "../../assets/project3.png";
 import IMG4 from "../../assets/project4.png";
+import { PiEyesFill } from "react-icons/pi";
 import "./Projects.css";
 
 function Projects() {
