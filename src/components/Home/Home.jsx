@@ -48,116 +48,73 @@ const Title = () => {
 
   const [titleOne, setTitleOne] = useState(heading1);
   const [titleTwo, setTitleTwo] = useState(heading2);
-  const countRef = useRef(0);
+  const countRefOne = useRef(0);
+  const intervalOne = useRef(null);
+  const countRefTwo = useRef(0);
+  const intervalTwo = useRef(null);
 
-  //   useEffect(() => {
-  //     let interval = null;
+  const randomize = (title, setTitle, heading, countRef, interval) => {
+    countRef.current = 0;
+    clearInterval(interval.current);
+    interval.current = setInterval(() => {
+      const newTitle = title
+        .split("")
+        .map((letter, index) => {
+          if (index < countRef.current) {
+            return heading[index];
+          }
 
-  //     const currentCount = countRef.current;
+          return alphabets[Math.floor(Math.random() * 26)];
+        })
+        .join("");
 
-  //     clearInterval(interval);
+      if (countRef.current >= heading.length) {
+        clearInterval(interval.current);
+      }
 
-  //     interval = setInterval(() => {
-  //       setTitleOne(
-  //         titleOne
-  //           .split("")
-  //           .map((letter, index) => {
-  //             if (index < currentCount) {
-  //               return heading1[index];
-  //             }
-  //             return alphabets[Math.floor(Math.random() * 26)];
-  //           })
-  //           .join("")
-  //       );
-
-  //       if (currentCount >= heading1.length) {
-  //         clearInterval(interval);
-  //       }
-
-  //       countRef.current += 1 / 3;
-  //     }, 1000);
-
-  //     // const updateTitle = () => {
-
-  //     // interval = setInterval(() => {
-  //     //   setTitleOne(
-  //     //     titleOne
-  //     //       .split("")
-  //     //       .map((letter, index) => {
-  //     //         if (index < currentCount) {
-  //     //           return heading1[index];
-  //     //         }
-  //     //         return alphabets[Math.floor(Math.random() * 26)];
-  //     //       })
-  //     //       .join("")
-  //     //   );
-
-  //     //   if (currentCount >= heading1.length) {
-  //     //     clearInterval(interval);
-  //     //   }
-
-  //     //   countRef.current += 1 / 3;
-  //     // }, 30);
-
-  //     //   if (currentCount % 4 == 0 && currentCount != 0) {
-  //     //     setTitleOne((prevTitle) => {
-  //     //       const newTitle = [...prevTitle];
-  //     //       const indexToUpdate = Math.floor(currentCount / 4) % heading1.length;
-  //     //       newTitle[indexToUpdate] = heading1[indexToUpdate];
-  //     //       return newTitle;
-  //     //     });
-  //     //   } else {
-  //     //     const newTitleOne = heading1
-  //     //       .split("")
-  //     //       .map(() => alphabets[Math.floor(Math.random() * alphabets.length)]);
-  //     //     setTitleOne(newTitleOne);
-  //     //   }
-  //     // };
-
-  //     // const intervalId = setInterval(updateTitle, 1000);
-
-  //     // Cleanup interval on component unmount
-  //     return () => clearInterval(interval);
-  //   }, []);
+      countRef.current += 1 / 3;
+      setTitle(newTitle);
+    }, 30);
+  };
 
   useEffect(() => {
-    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-    let interval = null;
-
-    // document.querySelector(".headingOne").onmouseover = (event) => {
-    setInterval(() => {
-      clearInterval(interval);
-      countRef.current = 0;
-
-      interval = setInterval(() => {
-        const newTitle = titleOne
-          .split("")
-          .map((letter, index) => {
-            if (index < countRef.current) {
-              return heading1[index];
-            }
-
-            return letters[Math.floor(Math.random() * 26)];
-          })
-          .join("");
-
-        if (countRef.current >= heading1.length) {
-          clearInterval(interval);
-        }
-
-        countRef.current += 1 / 3;
-        setTitleOne(newTitle);
-      }, 80);
-      // };
-    }, 2200);
+    randomize(titleOne, setTitleOne, heading1, countRefOne, intervalOne);
+    setTimeout(() => {
+      randomize(titleTwo, setTitleTwo, heading2, countRefTwo, intervalTwo);
+    }, 810);
   }, []);
 
   return (
     <div className="home-title">
-      <p data-value="I'm Abhay Sharma">I'm Abhay Sharma </p>
-      <h1 className="headingOne">{titleOne}</h1>
-      <h1 data-value="Developer">Developer</h1>
+      <p data-value="I'm Abhay Sharma">I'm ABHAY, </p>
+      <h1
+        onMouseOver={() =>
+          randomize(titleOne, setTitleOne, heading1, countRefOne, intervalOne)
+        }
+      >
+        {titleOne.split("").map((char, index) => {
+          if (
+            char == heading1[index]
+            // (index == 0 || index == 1 || index == 2 || index == 3)
+          )
+            return <span style={{ color: "#4db5ff" }}>{char}</span>;
+          return <span>{char}</span>;
+        })}
+      </h1>
+      <h1
+        onMouseOver={() =>
+          randomize(titleTwo, setTitleTwo, heading2, countRefTwo, intervalTwo)
+        }
+      >
+        {titleTwo.split("").map((char, index) => {
+          if (
+            char == heading2[index]
+            // (index == 0 || index == 5 || index == 7 || index == 8)
+          )
+            return <span style={{ color: "#4db5ff" }}>{char}</span>;
+          return <span>{char}</span>;
+        })}
+      </h1>
     </div>
   );
 };

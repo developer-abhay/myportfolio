@@ -1,6 +1,6 @@
 import React from "react";
 import "./Navbar.css";
-import myPic from "../../assets/myLogo.png";
+import myPic from "../../assets/myLogo.jpg";
 import { BsLinkedin, BsGithub, BsInstagram, BsTwitter } from "react-icons/bs";
 
 const Navbar = () => {
