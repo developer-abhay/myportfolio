@@ -3,7 +3,7 @@ import Home from "./components/Home/Home";
 import Navbar from "./components/Navbar/Navbar";
 import Projects from "./components/Projects/Projects";
 import About from "./components/About/About";
-// import Skills from "./components/Skills/Skills";
+import Skills from "./components/Skills/Skills";
 
 function App() {
   useEffect(() => {
@@ -57,7 +57,7 @@ function App() {
           <Home />
           <Projects />
           <About />
-          {/* <Skills /> */}
+          <Skills />
           {/* <Footer /> */}
         </div>
       </div>

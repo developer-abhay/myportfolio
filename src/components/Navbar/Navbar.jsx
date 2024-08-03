@@ -1,7 +1,7 @@
 import React from "react";
 import "./Navbar.css";
 import myPic from "../../assets/myLogo.jpg";
-import { BsLinkedin, BsGithub, BsInstagram, BsTwitter } from "react-icons/bs";
+import { BsLinkedin, BsGithub, BsInstagram, BsTwitterX } from "react-icons/bs";
 
 const Navbar = () => {
   // const [toggleIcon, setToggleIcon] = useState("show");
@@ -65,7 +65,7 @@ function Socials() {
         target="_blank"
         rel="noreferrer"
       >
-        <BsTwitter />
+        <BsTwitterX />
       </a>
     </div>
   );
