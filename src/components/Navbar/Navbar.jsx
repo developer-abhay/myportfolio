@@ -1,21 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Navbar.css";
 import myPic from "../../assets/myLogo.jpg";
 import { BsLinkedin, BsGithub, BsInstagram, BsTwitterX } from "react-icons/bs";
 
 const Navbar = () => {
-  // const [toggleIcon, setToggleIcon] = useState("show");
+  const [toggleNav, setToggleNav] = useState(false);
 
-  const showNavMenu = () => {
+  const showNavMenu = async () => {
     const bar1 = document.querySelector(".bar1");
     const bar2 = document.querySelector(".bar2");
     bar1.classList.toggle("close");
     bar2.classList.toggle("close");
 
-    const aboutSection = document.getElementById("about");
+    const aboutSection = document.getElementById("about-normal-view");
+
     aboutSection.classList.toggle("slide");
-    // setToggleIcon("close");
+    setToggleNav((prev) => !prev);
   };
+
+  useEffect(() => {
+    if (toggleNav) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "visible";
+    }
+  }, [toggleNav]);
 
   return (
     <div id="nav">

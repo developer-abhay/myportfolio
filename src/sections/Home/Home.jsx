@@ -93,9 +93,11 @@ const Title = () => {
         {titleOne.split("").map((char, index) => {
           if (char == heading1[index])
             return (
-              <span style={{ color: "var(--color-primary)" }}>{char}</span>
+              <span key={index} style={{ color: "var(--color-primary)" }}>
+                {char}
+              </span>
             );
-          return <span>{char}</span>;
+          return <span key={index}>{char}</span>;
         })}
       </h1>
       <h1
@@ -106,9 +108,11 @@ const Title = () => {
         {titleTwo.split("").map((char, index) => {
           if (char == heading2[index])
             return (
-              <span style={{ color: "var(--color-primary)" }}>{char}</span>
+              <span key={index} style={{ color: "var(--color-primary)" }}>
+                {char}
+              </span>
             );
-          return <span>{char}</span>;
+          return <span key={index}>{char}</span>;
         })}
       </h1>
     </div>

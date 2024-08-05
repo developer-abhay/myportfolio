@@ -7,25 +7,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   position: relative;
   padding: 0px 50px;
 }
-
-/* Horizontal Bar */
-/* .horizontal-bar {
-  background-color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 52px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  word-spacing: 10px;
-  text-align: center;
-  color: transparent;
-  -webkit-text-stroke: 4px var(--color-primary);
-} */
 
 /* Heading */
 #skills .heading {
@@ -87,12 +72,14 @@
 
 /* Skill Block */
 .skills-container {
-  max-height: 60vh;
-  width: fit-content;
-  padding: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.skills-container > div {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
 
 .skill-row {
@@ -173,35 +160,34 @@
 }
 
 /* ========= Media Queries (Small Devices) ==========*/
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   #skills {
     width: 100vw;
-  }
-  .skills-container {
-    padding: 20px;
+    min-width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
   }
 
-  .skill-row {
-    gap: 15px;
-    margin-bottom: 15px;
+  .skills-container > div {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
 
   .skill-item {
-    font-size: 10px;
-    height: 40px;
-    min-width: 80px;
+    font-size: 14px;
+    height: 45px;
+    min-width: 120px;
     width: fit-content;
-    max-width: 90px;
-    gap: 3px;
-    box-shadow: 3px 3px 0px var(--color-primary);
+    max-width: 130px;
+    gap: 8px;
   }
 
   .skill-item .icon {
-    width: 14px;
-    height: 14px;
+    width: 16px;
+    height: 16px;
   }
   .skill-item .icon > :nth-child(1) {
-    width: 14px;
-    height: 14px;
+    width: 16px;
+    height: 16px;
   }
 }

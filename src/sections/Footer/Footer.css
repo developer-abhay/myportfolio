@@ -99,9 +99,12 @@
   }
 }
 /* ========= Media Queries (Semi Medium Devices) ==========*/
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   #footer {
     width: 100vw;
+    min-width: 100vw;
+    max-width: 100vw;
+    height: 100vh;
   }
 
   #footer h1 {
@@ -110,7 +113,11 @@
   }
 
   #footer a {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
+  }
+  #footer .arrow-icon {
+    width: 120px;
+    height: 120px;
   }
 }

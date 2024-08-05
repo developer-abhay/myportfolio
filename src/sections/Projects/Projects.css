@@ -221,49 +221,66 @@
 }
 
 /* ========= Media Queries (Small Devices) ==========*/
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   #projects {
-    overflow: hidden;
-    width: 200vw;
+    width: 100vw;
+    max-width: 100vw;
+    min-width: 100vw;
+    min-height: 200vh;
+    height: fit-content;
+    flex-direction: column;
   }
 
-  /* ---------Heading----------- */
   #projects .heading {
-    width: 100px;
+    height: 80px;
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid rgb(209, 209, 209);
+  }
+  #projects .heading > div {
+    height: 80px;
+    width: 100%;
+    animation: animateX 3s linear infinite;
+    display: flex;
+    gap: 50px;
   }
   #projects .heading h1 {
-    font-size: 62px;
+    font-size: 54px;
+    transform: rotate(0deg);
+    margin-top: 0px;
   }
 
-  @keyframes animateY {
+  @keyframes animateX {
     0% {
-      transform: translateY(-70%);
+      transform: translateX(0%);
     }
     100% {
-      transform: translateY(-9.2%);
+      transform: translateX(-65%);
     }
   }
+
   /* ---------------Projects-------------- */
   .projects-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    padding: 50px 0px;
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
 
   .projects-item-image {
     width: 300px;
-    height: 150px;
+    height: 160px;
+  }
+
+  .projects-item:nth-child(2n) {
+    flex-direction: column;
   }
 
   .projects-item h3 {
-    font-size: 20px;
+    font-size: 22px;
   }
-  /* More Button */
   #projects > .circle {
-    margin-left: -40px;
-  }
-  #projects > .circle:hover > .layer {
-    height: 180px;
-    width: 180px;
+    margin: 0px;
+    margin-top: -50px;
+    transform: scale(0.8);
   }
 }

@@ -47,15 +47,16 @@ const About = () => {
         <div className="profile-image-container">
           <img src={myImage} alt="" className="profile-image" />
         </div>
-        <div className="about-details">
-          <div className="about-details-top">
-            <div>
-              <p>Abhay Sharma</p>
-              <span>Status: Offline</span>
-              <p>{time}</p>
-            </div>
-            <CTA />
+        <div className="about-details-top">
+          <div>
+            <p>Abhay Sharma</p>
+            <span>Status: Offline</span>
+            <p>{time}</p>
           </div>
+          <CTA />
+        </div>
+
+        <div className="about-text">
           <p>
             Hey! I'm Abhay, your friendly neighborhood{" "}
             <span> web developer </span>. I'm just another <span>22 year</span>{" "}

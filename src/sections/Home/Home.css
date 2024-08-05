@@ -1,12 +1,12 @@
 #home {
   min-width: fit-content;
   height: 100vh;
-  position: relative;
   padding: 20px 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 /* Fog container  */
@@ -166,30 +166,49 @@
 }
 
 /* ========= Media Queries (Small Devices) ==========*/
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   #home {
     width: 100vw;
-    margin-left: 0px;
+    max-width: 100vw;
+    min-width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+    overflow: hidden;
+    padding: 40px;
   }
   .fog-img-1 {
-    animation: marquee 60s linear infinite;
+    animation: marquee 25s linear infinite;
   }
   .fog-img-2 {
-    animation: marquee2 90s linear infinite;
+    animation: marquee2 50s linear infinite;
   }
   .home-top > div {
     width: 200px;
   }
 
-  /* Title */
+  .home-title {
+    width: 100%;
+  }
   .home-title > p {
     font-size: 20px;
   }
 
   .home-title > h1 {
     overflow: hidden;
-    width: 420px;
+    width: 90%;
     line-height: 65px;
     font-size: 54px;
+  }
+  .scroll-down {
+    bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .home-title > h1 {
+    overflow: hidden;
+    width: 100%;
+    line-height: 50px;
+    font-size: 42px;
   }
 }
