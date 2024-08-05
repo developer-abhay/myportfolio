@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./About.css";
 import myImage from "../../assets/myLogo.jpg";
+import CTA from "../../components/CTA/CTA";
 
 const About = () => {
   const [time, setTime] = useState("");
@@ -38,18 +39,22 @@ const About = () => {
     }
   }, []);
   return (
-    <section id="about" className="noise">
+    <section id="about">
       <h1>
         Currently based in <span>New Delhi</span>
       </h1>
-      <div className="about-details">
+      <div className="about-container">
         <div className="profile-image-container">
           <img src={myImage} alt="" className="profile-image" />
         </div>
-        <div className="about-text">
-          <div>
-            <div>Status: Offline</div>
-            <span>{time}</span>
+        <div className="about-details">
+          <div className="about-details-top">
+            <div>
+              <p>Abhay Sharma</p>
+              <span>Status: Offline</span>
+              <p>{time}</p>
+            </div>
+            <CTA />
           </div>
           <p>
             Hey! I'm Abhay, your friendly neighborhood{" "}
@@ -62,8 +67,9 @@ const About = () => {
             Currently, I'm a <span>freelance</span> ninja, slicing through
             projects with precision and style. Whether you're looking for a
             long-term partner or just a quick fling with some code, I'm your
-            guy. By the way do you know that spiders are the only web developers
-            that are happy to find bugs.
+            guy.
+            <br /> <span>Fun fact : </span>do you know that spiders are the only
+            web developers that are happy to find bugs.
           </p>
         </div>
       </div>

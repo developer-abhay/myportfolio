@@ -11,6 +11,9 @@ const Navbar = () => {
     const bar2 = document.querySelector(".bar2");
     bar1.classList.toggle("close");
     bar2.classList.toggle("close");
+
+    const aboutSection = document.getElementById("about");
+    aboutSection.classList.toggle("slide");
     // setToggleIcon("close");
   };
 

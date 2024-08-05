@@ -1,10 +1,11 @@
 import { CgArrowLongRight } from "react-icons/cg";
 import "./Home.css";
 import { useEffect, useRef, useState } from "react";
+import CTA from "../../components/CTA/CTA.jsx";
 
 const Home = () => {
   return (
-    <section className="home">
+    <section id="home">
       <div className="fog-container">
         <div className="fog-img fog-img-1"></div>
         <div className="fog-img fog-img-2"></div>
@@ -25,11 +26,8 @@ const Home = () => {
       </div>
 
       <Title />
-
       <div className="cta">
-        <a href="" download className="btn">
-          Download CV
-        </a>
+        <CTA />
       </div>
 
       <p className="scroll-down">
@@ -72,9 +70,9 @@ const Title = () => {
         clearInterval(interval.current);
       }
 
-      countRef.current += 1 / 3;
+      countRef.current += 1 / 4;
       setTitle(newTitle);
-    }, 30);
+    }, 40);
   };
 
   useEffect(() => {
@@ -93,11 +91,10 @@ const Title = () => {
         }
       >
         {titleOne.split("").map((char, index) => {
-          if (
-            char == heading1[index]
-            // (index == 0 || index == 1 || index == 2 || index == 3)
-          )
-            return <span style={{ color: "#4db5ff" }}>{char}</span>;
+          if (char == heading1[index])
+            return (
+              <span style={{ color: "var(--color-primary)" }}>{char}</span>
+            );
           return <span>{char}</span>;
         })}
       </h1>
@@ -107,11 +104,10 @@ const Title = () => {
         }
       >
         {titleTwo.split("").map((char, index) => {
-          if (
-            char == heading2[index]
-            // (index == 0 || index == 5 || index == 7 || index == 8)
-          )
-            return <span style={{ color: "#4db5ff" }}>{char}</span>;
+          if (char == heading2[index])
+            return (
+              <span style={{ color: "var(--color-primary)" }}>{char}</span>
+            );
           return <span>{char}</span>;
         })}
       </h1>

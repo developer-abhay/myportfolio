@@ -3,7 +3,7 @@ import IMG1 from "../../assets/project1.png";
 import IMG2 from "../../assets/project2.png";
 import IMG3 from "../../assets/project3.png";
 import IMG4 from "../../assets/project4.png";
-import { PiEyesFill } from "react-icons/pi";
+import { MdInsertLink } from "react-icons/md";
 import "./Projects.css";
 
 function Projects() {
@@ -13,9 +13,9 @@ function Projects() {
     const roundString = roundText.innerText
       .split("")
       .map((char, index) => {
-        return `<p key="${index}" style="transform:rotate(${
-          index * 5
-        }deg)">${char}</p>`;
+        return `<span key="${index}" style="transform:rotate(${
+          index * 7.4
+        }deg)">${char}</span>`;
       })
       .join("");
 
@@ -78,21 +78,21 @@ function Projects() {
             <div>
               <h3>{title}</h3>
               <a href={github} target="_blank" rel="noreferrer">
-                Source Code - Github Repo
+                Source Code - Github Repo <MdInsertLink className="icon" />
               </a>
             </div>
           </article>
         ))}
       </div>
       <a
-        className="hello"
+        className="circle"
         href="https://github.com/developer-abhay"
         target="_blank"
         rel="noreferrer"
       >
         <p>More</p>
-        <span className="round-text">See More - See More - See More - </span>
-        <div></div>
+        <div className="round-text">See More - See More - See More - </div>
+        <div className="layer"></div>
       </a>
     </section>
   );

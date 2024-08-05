@@ -2,28 +2,32 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  border: 0;
+  border: none;
   outline: 0;
   list-style: none;
   text-decoration: none;
   font-family: "Poppins", sans-serif;
-  cursor: none !important;
+  /* cursor: none !important; */
 }
 
 /* Variables */
 :root {
-  --color-bg: #1f1f37;
-  --color-bg-variant: #2c2c6c;
-  --color-primary: #4db5ff;
-  --color-primary-variant: #12649f;
+  --color-bg: #222;
+  --color-bg-variant: #353131;
+  --color-primary: #4dffb2;
+  /* --color-primary: #4dffc4; */
+  --color-primary-variant: #34a473;
   --color-white: #fff;
-  --color-light: rgba(255, 255, 255, 0.6);
+  --color-light: rgb(230, 230, 230);
   --transition: 400ms all ease;
 }
 
 body {
   color: var(--color-white);
   line-height: 1.7;
+  background-color: black;
+  max-height: fit-content;
+  max-width: fit-content;
 }
 
 body::-webkit-scrollbar {
@@ -33,10 +37,11 @@ body::-webkit-scrollbar {
 #root {
   height: 100vh;
   width: 100vw;
+  background-color: #34a473;
 }
 
 main {
-  height: 500vh;
+  /* height: 400vh; */
 }
 #sticky {
   position: sticky;
@@ -48,16 +53,21 @@ main {
 
 #scroll-body {
   display: flex;
-  width: 500vw;
+  /* width: 400vw; */
+  min-width: fit-content;
   height: 100%;
-  /* will-change: transform; */
+  will-change: transform;
+  overflow: hidden;
+  margin-left: 70px;
+  background-color: red;
 }
 
 /* Mouse Trailer */
 #trailer {
-  width: 40px;
-  height: 40px;
-  border: 3px solid var(--color-primary-variant);
+  width: 30px;
+  height: 30px;
+  border: 3px solid #37b07a;
+  /* background-color: #48ffac; */
   border-radius: 50%;
   position: fixed;
   top: 0;
@@ -98,3 +108,91 @@ a:hover {
   background: var(--color-primary);
   color: var(--color-bg);
 }
+
+/* @media screen and (max-width: 600px) {
+  #root {
+    height: fit-content;
+    width: fit-content;
+  }
+
+  main {
+    height: 600vh;
+  }
+  #sticky {
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+    height: 100vh;
+  }
+
+  #scroll-body {
+    display: flex;
+    width: 600vw;
+    height: 100%;
+    will-change: transform;
+    overflow: hidden;
+  }
+} */
+
+/* @media screen and (max-width: 1440px) {
+  main {
+    height: 400vh;
+  }
+
+  #scroll-body {
+    width: 400vw;
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  main {
+    height: 420vh;
+  }
+
+  #scroll-body {
+    width: 420vw;
+  }
+}
+@media screen and (max-width: 1280px) {
+  main {
+    height: 410vh;
+  }
+
+  #scroll-body {
+    width: 410vw;
+  }
+}
+@media screen and (max-width: 1024px) {
+  main {
+    height: 410vh;
+  }
+
+  #scroll-body {
+    width: 410vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #root {
+    height: 100%;
+    width: 100vw;
+  }
+
+  main {
+    height: 100%;
+    width: 100vw;
+  }
+  #sticky {
+    position: static;
+    overflow: visible;
+    height: 100%;
+    width: 100vw;
+  }
+
+  #scroll-body {
+    flex-direction: column;
+    width: 100vw;
+    height: 100%;
+  }
+} */

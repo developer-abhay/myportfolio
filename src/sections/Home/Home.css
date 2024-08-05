@@ -1,7 +1,6 @@
-.home {
-  width: calc(100vw - 70px);
+#home {
+  min-width: fit-content;
   height: 100vh;
-  margin-left: 70px;
   position: relative;
   padding: 20px 30px;
   display: flex;
@@ -19,7 +18,6 @@
   height: 100%;
   overflow: hidden;
   z-index: -5;
-  /* background-color: black; */
   background-color: var(--color-bg);
 }
 
@@ -98,6 +96,11 @@
 }
 
 /* ---------Details--------- */
+.home-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .home-title > p {
   font-size: 32px;
   text-align: center;
@@ -105,7 +108,7 @@
 }
 
 .home-title > h1 {
-  width: 600px;
+  width: 620px;
   text-align: center;
   line-height: 120px;
   letter-spacing: 2px;
@@ -121,7 +124,6 @@
   border-bottom: 2px solid white;
 }
 
-/* CTA */
 .cta {
   width: 100%;
   display: flex;
@@ -140,4 +142,54 @@
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+/* ========= Media Queries (Medium Devices) ==========*/
+@media screen and (max-width: 1024px) {
+  .home-title > h1 {
+    width: 560px;
+    line-height: 90px;
+    font-size: 84px;
+  }
+}
+
+/* ========= Media Queries (Semi Medium Devices) ==========*/
+@media screen and (max-width: 880px) {
+  .home-title > h1 {
+    width: 500px;
+    line-height: 85px;
+    font-size: 72px;
+  }
+  .home-top > div {
+    width: 300px;
+  }
+}
+
+/* ========= Media Queries (Small Devices) ==========*/
+@media screen and (max-width: 600px) {
+  #home {
+    width: 100vw;
+    margin-left: 0px;
+  }
+  .fog-img-1 {
+    animation: marquee 60s linear infinite;
+  }
+  .fog-img-2 {
+    animation: marquee2 90s linear infinite;
+  }
+  .home-top > div {
+    width: 200px;
+  }
+
+  /* Title */
+  .home-title > p {
+    font-size: 20px;
+  }
+
+  .home-title > h1 {
+    overflow: hidden;
+    width: 420px;
+    line-height: 65px;
+    font-size: 54px;
+  }
 }

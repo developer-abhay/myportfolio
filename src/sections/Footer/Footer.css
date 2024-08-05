@@ -1,0 +1,116 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lobster&family=Playwrite+AR:wght@100..400&display=swap"); */
+
+#footer {
+  max-width: 900px;
+  width: fit-content;
+  min-width: 800px;
+  color: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+
+#footer h1 {
+  font-size: 96px;
+  text-align: center;
+  line-height: 110px;
+  font-family: "Lobster", sans-serif;
+}
+#footer h1 span {
+  margin-left: 5px;
+  font-family: "Lobster", sans-serif;
+  color: var(--color-primary);
+}
+
+#footer div {
+  position: relative;
+  transform: rotate(-15deg);
+}
+
+#footer a {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background-color: var(--color-bg);
+  color: var(--color-primary);
+  margin: 20px;
+  font-size: 24px;
+  font-weight: 700;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.35s ease-in-out;
+  transform: rotate(15deg);
+}
+
+#footer a:hover {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  transform: rotate(375deg);
+}
+#footer a:active {
+  transform: scale(0.8);
+}
+
+#footer p {
+  text-align: center;
+}
+
+#footer .arrow-icon {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  bottom: 10%;
+  left: -100%;
+  animation: wobble 1s linear infinite;
+}
+
+@keyframes wobble {
+  0% {
+    transform: translate(0px);
+  }
+  50% {
+    transform: translate(80px);
+  }
+  100% {
+    transform: translate(0px);
+  }
+}
+
+/* ========= Media Queries (Semi Medium Devices) ==========*/
+@media screen and (max-width: 880px) {
+  #footer {
+    max-width: 700px;
+    min-width: 600px;
+  }
+
+  #footer h1 {
+    font-size: 84px;
+    line-height: 95px;
+  }
+
+  #footer a {
+    width: 150px;
+    height: 150px;
+  }
+}
+/* ========= Media Queries (Semi Medium Devices) ==========*/
+@media screen and (max-width: 600px) {
+  #footer {
+    width: 100vw;
+  }
+
+  #footer h1 {
+    font-size: 72px;
+    line-height: 90px;
+  }
+
+  #footer a {
+    width: 150px;
+    height: 150px;
+  }
+}

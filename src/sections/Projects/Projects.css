@@ -1,7 +1,10 @@
 #projects {
+  min-width: fit-content;
+  max-width: fit-content;
   display: flex;
   align-items: center;
   background-color: white;
+  overflow: hidden;
 }
 /* ---------Heading----------- */
 #projects .heading {
@@ -13,6 +16,7 @@
   border-right: 1px solid rgb(209, 209, 209);
 }
 #projects .heading > div {
+  width: 130px;
   animation: animateY 5s linear infinite;
 }
 #projects .heading h1 {
@@ -82,18 +86,28 @@
   color: var(--color-bg-variant);
 }
 
-.projects-item a:hover {
-  color: var(--color-primary-variant);
+.projects-item a {
+  font-weight: 600;
+  font-size: 20px;
+  -webkit-text-stroke: 0.3px var(--color-bg);
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-/* ------------Hello Btn---------- */
-#projects > .hello {
+.projects-item a .icon {
+  font-size: 30px;
+}
+.projects-item a:hover {
+  color: var(--color-bg);
+}
+/* ------------More Btn---------- */
+#projects > .circle {
   height: 200px;
   width: 200px;
-  border-radius: 50%;
-  margin: 0px 70px;
-  margin-left: 100px;
-
-  color: black;
+  margin: 0px 20px;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--color-bg);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -101,39 +115,51 @@
   cursor: pointer;
 }
 
-#projects > .hello > div {
+#projects > .circle > .layer {
   position: absolute;
   width: 100px;
   height: 100px;
   border-radius: 50%;
   background-color: var(--color-primary);
-  z-index: 0;
   transition: 0.4s all ease-in-out;
 }
 
-#projects > .hello > p {
+#projects > .circle > p {
   z-index: 2;
   font-size: 22px;
+  font-weight: 600;
   color: #fff;
-  font-weight: 500;
-  text-transform: uppercase;
+  -webkit-text-stroke: 0.6px var(--color-bg);
 }
 
-.hello > span {
+.circle > .round-text {
+  transition: 0.4s all ease;
   position: absolute;
   animation: rotateText 20s infinite linear;
-  z-index: 100;
+  z-index: 2;
   width: 100px;
   height: 100px;
 }
-.hello > span > p {
+.circle > .round-text > span {
   position: absolute;
   left: 50%;
   top: -40px;
-  font-size: 14px;
   font-weight: 600;
-  z-index: 10;
+  z-index: 2;
   transform-origin: 0 90px;
+}
+
+#projects > .circle:hover > .layer {
+  height: 200px;
+  width: 200px;
+}
+
+.circle:hover > .round-text {
+  color: white;
+}
+
+.circle:active {
+  transform: scale(0.8);
 }
 
 @keyframes rotateText {
@@ -148,27 +174,96 @@
   }
 }
 
-#projects > .hello:hover > div {
-  height: 200px;
-  width: 200px;
-}
-
-.hello:hover > span {
-  color: white;
-}
-
 /* ========= Media Queries (Medium Devices) ==========*/
 @media screen and (max-width: 1024px) {
+  .projects-item-image {
+    width: 380px;
+    height: 220px;
+  }
+
+  .projects-item h3 {
+    font-size: 24px;
+  }
+}
+
+/* ========= Media Queries (Semi Medium Devices) ==========*/
+@media screen and (max-width: 880px) {
+  /* Heading */
+  #projects .heading {
+    width: 100px;
+  }
+  #projects .heading > div {
+    width: 100px;
+  }
+  #projects .heading h1 {
+    font-size: 64px;
+  }
+
+  /* Projects */
   .projects-container {
+    display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
+    gap: 30px 60px;
+  }
+
+  .projects-item-image {
+    width: 360px;
+    height: 200px;
+  }
+
+  .projects-item h3 {
+    font-size: 24px;
+  }
+
+  .projects-item a {
+    font-size: 18px;
   }
 }
 
 /* ========= Media Queries (Small Devices) ==========*/
 @media screen and (max-width: 600px) {
+  #projects {
+    overflow: hidden;
+    width: 200vw;
+  }
+
+  /* ---------Heading----------- */
+  #projects .heading {
+    width: 100px;
+  }
+  #projects .heading h1 {
+    font-size: 62px;
+  }
+
+  @keyframes animateY {
+    0% {
+      transform: translateY(-70%);
+    }
+    100% {
+      transform: translateY(-9.2%);
+    }
+  }
+  /* ---------------Projects-------------- */
   .projects-container {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .projects-item-image {
+    width: 300px;
+    height: 150px;
+  }
+
+  .projects-item h3 {
+    font-size: 20px;
+  }
+  /* More Button */
+  #projects > .circle {
+    margin-left: -40px;
+  }
+  #projects > .circle:hover > .layer {
+    height: 180px;
+    width: 180px;
   }
 }
