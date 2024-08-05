@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Navbar.css";
 import myPic from "../../assets/myLogo.jpg";
 import { BsLinkedin, BsGithub, BsInstagram, BsTwitterX } from "react-icons/bs";
-
+import { SiGmail } from "react-icons/si";
 const Navbar = () => {
   const [toggleNav, setToggleNav] = useState(false);
 
@@ -65,19 +65,15 @@ function Socials() {
       >
         <BsGithub />
       </a>
-      <a
-        href="https://www.instagram.com/asliabhay/"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <BsInstagram />
+      <a href="https://x.com/codeathlete" target="_blank" rel="noreferrer">
+        <BsTwitterX />
       </a>
       <a
-        href="https://www.instagram.com/asliabhay/"
+        href="https://mail.google.com/mail/?view=cm&fs=1&to=abhaysharma.developer@gmail.com"
         target="_blank"
         rel="noreferrer"
       >
-        <BsTwitterX />
+        <SiGmail />
       </a>
     </div>
   );

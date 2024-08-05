@@ -25,7 +25,6 @@
 body {
   color: var(--color-white);
   line-height: 1.7;
-  background-color: black;
   max-height: fit-content;
   max-width: fit-content;
 }
@@ -36,7 +35,6 @@ body::-webkit-scrollbar {
 #root {
   height: 100vh;
   width: 100vw;
-  background-color: #34a473;
 }
 
 #sticky {
@@ -98,6 +96,18 @@ body::-webkit-scrollbar {
   transition: opacity 200ms ease;
 }
 
+/* Animate on load  */
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
 a {
   color: var(--color-primary);
   transition: var(--transition);
@@ -150,6 +160,10 @@ a:hover {
     overflow: hidden;
     flex-direction: column;
     margin-left: 0px;
+  }
+
+  #trailer {
+    display: none;
   }
   #about-normal-view {
     display: none;

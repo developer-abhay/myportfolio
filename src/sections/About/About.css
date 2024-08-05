@@ -209,3 +209,30 @@
     font-size: 13px;
   }
 }
+
+/* ========= Media Queries (Small Devices) ==========*/
+@media screen and (max-width: 500px) {
+  /*-------------- Heading ------------*/
+  #about > h1 {
+    font-size: 24px;
+  }
+  .about-container {
+    width: 90%;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 50% 50%;
+  }
+  .profile-image-container {
+    min-width: 150px;
+    min-height: 150px;
+    max-height: 180px;
+  }
+  /* ------ Text ----------*/
+  .about-text {
+    font-size: 12px;
+  }
+  .about-details-top > div {
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--color-primary);
+  }
+}

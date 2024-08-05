@@ -76,29 +76,27 @@ function App() {
   useEffect(() => {
     const mouseTrailer = document.getElementById("trailer");
 
-    // Set initial screen size
-    handleResize();
+    handleResize(); // Set initial screen size
 
-    // Set Screen Size on resize
-    window.onresize = handleResize;
-
-    // Show mouse Trailer
+    window.addEventListener("resize", handleResize); // Set Screen Size on resize
     window.onmousemove = (e) => {
-      animateMouseTrailer(e, mouseTrailer);
+      animateMouseTrailer(e, mouseTrailer); // Show mouse Trailer
     };
-
-    // Hide mouse trailer
-    window.onmouseout = () => {
-      mouseTrailer.style.opacity = 0;
-    };
-
-    // Horizontal Scroll on Window Scroll
-    window.onscroll = scrollHorizontal;
+    window.addEventListener("mouseout", () => {
+      mouseTrailer.style.opacity = 0; // Hide mouse trailer
+    });
+    window.addEventListener("scroll", scrollHorizontal); // Horizontal Scroll on Window Scroll
 
     // Clean up on unmount
-
     return () => {
       window.removeEventListener("resize", handleResize);
+      window.removeEventListener("mousemove", (e) =>
+        animateMouseTrailer(e, mouseTrailer)
+      );
+      window.removeEventListener("mouseout", () => {
+        mouseTrailer.style.opacity = 0;
+      });
+      window.removeEventListener("scroll", scrollHorizontal);
     };
   }, []);
 

@@ -84,7 +84,7 @@ const Title = () => {
 
   return (
     <div className="home-title">
-      <p data-value="I'm Abhay Sharma">I'm ABHAY, </p>
+      <p>I'm Abhay</p>
       <h1
         onMouseOver={() =>
           randomize(titleOne, setTitleOne, heading1, countRefOne, intervalOne)

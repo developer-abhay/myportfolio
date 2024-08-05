@@ -33,14 +33,14 @@
   background-repeat: repeat-x;
   background-size: contain;
   background-position: center;
-  animation: marquee 90s linear infinite;
+  animation: marquee 45s linear infinite;
 }
 .fog-img-2 {
   background: url("../../assets/fog-2.png");
   background-repeat: repeat-x;
   background-size: contain;
   background-position: center;
-  animation: marquee2 120s linear infinite;
+  animation: marquee2 60s linear infinite;
 }
 
 @keyframes marquee {
@@ -100,9 +100,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: 1s fadeInUp;
 }
 .home-title > p {
   font-size: 32px;
+  font-weight: 600;
   text-align: center;
   letter-spacing: 1px;
 }
@@ -205,10 +207,17 @@
 }
 
 @media screen and (max-width: 400px) {
+  #home {
+    padding: 60px 30px;
+  }
+  .home-top > div {
+    width: 150px;
+    font-size: 15px;
+  }
+
   .home-title > h1 {
-    overflow: hidden;
     width: 100%;
     line-height: 50px;
-    font-size: 42px;
+    font-size: 40px;
   }
 }
